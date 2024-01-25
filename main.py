@@ -45,7 +45,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command("txt") & (filters.chat(LOG) | filters.user(ADMINS)))
 async def account_login(bot: Client, m: Message):
-    editable = await bot.send_message(m.chat.id, f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Bruh 👻, I am **Text Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer :** ₖₐₙ𝓬ₕₐ\n**Language :** Python\n**Framework :** 🔥 Pyrogram\n\nSend **TXT** File :-", reply_markup=keyboard)
+    editable = await bot.send_message(m.chat.id, f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Bruh 👻, I am **Text Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer :** ꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂\n**Language :** Python\n**Framework :** 🔥 Pyrogram\n\nSend **TXT** File :-", reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
@@ -142,7 +142,7 @@ async def account_login(bot: Client, m: Message):
              url =  "https://d26g5bnklkwsh4.cloudfront.net/" + id + "/master.m3u8"
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").replace("pdf", " ").replace("_", " ").replace("__", " ").replace("___", " ").replace("____", " ").strip()
-            name = F'{name1[:80]} By:ₖₐₙ𝓬ₕₐ'
+            name = F'{name1[:80]} By:꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂'
 
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
