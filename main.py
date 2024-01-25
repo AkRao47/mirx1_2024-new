@@ -37,13 +37,13 @@ keyboard = InlineKeyboardMarkup( [ [
             InlineKeyboardButton(text="Channel 🛡️", url="https://www.google.com", ),
             InlineKeyboardButton(text="꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂ 🛠️", url="https://lund-lelo.com/repo-lega", ), ], ] )
 
-@bot.on_message(filters.command("stop") & (filters.chat(LOG) | filters.user()))
+@bot.on_message(filters.command("stop") & (filters.chat(LOG) | filters.user(ADMINS)))
 async def restart_handler(_, m):
     await m.reply_text("**Oh! Fuck 🚨**", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command("txt") & (filters.chat(LOG) | filters.user()))
+@bot.on_message(filters.command("txt") & (filters.chat(LOG) | filters.user(ADMINS)))
 async def account_login(bot: Client, m: Message):
     editable = await bot.send_message(m.chat.id, f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Bruh 👻, I am **Text Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer :** ₖₐₙ𝓬ₕₐ\n**Language :** Python\n**Framework :** 🔥 Pyrogram\n\nSend **TXT** File :-", reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
