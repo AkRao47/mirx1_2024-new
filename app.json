@@ -1,0 +1,124 @@
+{
+
+  "name": "ABHIMANYU509",
+
+  "repository": "https://github.com/ABHIMANYU509/SelfStudy",
+
+  "description": "A telegram Bot for downloading videos from various websites. Created by MR. ANONYMOUS",
+
+  "addons": [],
+
+  "env": {
+
+    "API_ID": {
+
+      "description": "TG API_ID",
+
+      "value":"",
+
+      "required": false
+
+    },
+
+    "API_HASH": {
+
+      "description": "TG API HASH",
+
+      "value":"",
+
+      "required": false
+
+    },
+
+    "BOT_TOKEN": {
+
+      "description": "Get your bot token by talking to @Botfather",
+
+      "required": false
+
+    },
+
+    "APP_NAME": {
+
+      "description": "Heroku app name",
+
+      "required": false
+
+    },
+
+    "API_KEY": {
+
+      "description": "Heroku api key",
+
+      "required": false
+
+    },
+
+    "ADMINS": {
+
+      "description": "who will use this bot",
+
+      "value":"",
+
+      "required": false
+
+    },
+
+    "FR_TOKEN": {
+
+      "description": "FR_TOKEN",
+
+      "value":"f0907b55-922e-414a-8d21-47c1887bb90d",
+
+      "required": true
+
+    },
+    
+    "LOG": {
+      
+      "value":"",
+
+      "description": "Group Ids seperated by space",
+
+      "required": false
+
+    }
+
+  },
+
+  "formation": {
+
+    "worker": {
+
+    "quantity": 1,
+
+    "size": "Basic"
+
+    }
+
+  },
+
+  "buildpacks": [
+
+    {
+
+      "url": "heroku/python"
+
+    },
+
+    {
+
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+
+    },
+
+ 
+    {
+
+      "url": "https://github.com/amivin/aria2-heroku.git"
+
+    }
+
+  ]
+
+}
