@@ -45,7 +45,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command("Pyro") & (filters.chat(LOG) | filters.user(ADMINS)))
 async def account_login(bot: Client, m: Message):
-    editable = await bot.send_message(m.chat.id, f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Bruh 👻, I am **Text Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer :** NOOB\n**Language :** Python\n**Framework :** 🔥 Pyrogram\n\nSend **TXT** File :-", reply_markup=keyboard)
+    editable = await bot.send_message(m.chat.id, f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Bruh 👻, I am **Text Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer :** ₖₐₙ𝓬ₕₐ\n**Language :** Python\n**Framework :** 🔥 Pyrogram\n\nSend **TXT** File :-", reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
@@ -142,7 +142,7 @@ async def account_login(bot: Client, m: Message):
              url =  "https://d26g5bnklkwsh4.cloudfront.net/" + id + "/master.m3u8"
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").replace("pdf", " ").replace("_", " ").replace("__", " ").replace("___", " ").replace("____", " ").strip()
-            name = F'{name1[:80]} By:🅼🆄🅽🅽🅰 🅱🅷🅰🅸🆈🅰'
+            name = F'{name1[:80]} By:ₖₐₙ𝓬ₕₐ'
 
             if "youtu" in url:
                 ytf = f"b[height<={raw_text2}][ext=mp4]/bv[height<={raw_text2}][ext=mp4]+ba[ext=m4a]/b[ext=mp4]"
@@ -155,12 +155,12 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:  
-                cc = f"**{str(count).zfill(3)}.** {name1}.mkv\n\n**Batch Name :** {b_name}\n\n"
+                cc = f"**{str(count).zfill(3)}.ₖₐₙ𝓬ₕₐ** {name1}.mkv\n\n**Batch Name :** {b_name}\n\n"
                 if message.from_user.username:
                     cc += f"**Downloaded By :** {message.from_user.first_name}\n`@{message.from_user.username}`"
                 else:
                     cc += f"**Downloaded By :** Group Admin"
-                cc1 = f"**{str(count).zfill(3)}.** {name1}\n\n**Batch Name :** {b_name}\n\n"
+                cc1 = f"**{str(count).zfill(3)}.ₖₐₙ𝓬ₕₐ** {name1}\n\n**Batch Name :** {b_name}\n\n"
                 if message.from_user.username:
                     cc1 += f"**Downloaded By :** {message.from_user.first_name}\n`@{message.from_user.username}`"
                 else:
@@ -190,7 +190,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Processing Next Output 🦾🔥**")
+                    prog = await m.reply_text(f"**Processing Next Output** \n**Downloading in Progress**")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
