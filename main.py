@@ -35,15 +35,15 @@ LOG = config.LOG
 
 keyboard = InlineKeyboardMarkup( [ [
             InlineKeyboardButton(text="Channel 🛡️", url="https://www.google.com", ),
-            InlineKeyboardButton(text="Repo 🛠️", url="https://lund-lelo.com/repo-lega", ), ], ] )
+            InlineKeyboardButton(text="꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂ 🛠️", url="https://lund-lelo.com/repo-lega", ), ], ] )
 
-@bot.on_message(filters.command("stop") & (filters.chat(LOG) | filters.user(ADMINS)))
+@bot.on_message(filters.command("stop") & (filters.chat(LOG) | filters.user()))
 async def restart_handler(_, m):
     await m.reply_text("**Oh! Fuck 🚨**", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command("Pyro") & (filters.chat(LOG) | filters.user(ADMINS)))
+@bot.on_message(filters.command("txt") & (filters.chat(LOG) | filters.user()))
 async def account_login(bot: Client, m: Message):
     editable = await bot.send_message(m.chat.id, f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Bruh 👻, I am **Text Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer :** ₖₐₙ𝓬ₕₐ\n**Language :** Python\n**Framework :** 🔥 Pyrogram\n\nSend **TXT** File :-", reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
@@ -155,16 +155,16 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:  
-                cc = f"**{str(count).zfill(3)}.ₖₐₙ𝓬ₕₐ** {name1}.mkv\n\n**Batch Name :** {b_name}\n\n"
+                cc = f"**꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂**\n\n**{str(count).zfill(3)}.** {name1}.mkv\n\n**Batch Name :** {b_name}\n\n"
                 if message.from_user.username:
                     cc += f"**Downloaded By :** {message.from_user.first_name}\n`@{message.from_user.username}`"
                 else:
-                    cc += f"**Downloaded By :** Group Admin"
-                cc1 = f"**{str(count).zfill(3)}.ₖₐₙ𝓬ₕₐ** {name1}\n\n**Batch Name :** {b_name}\n\n"
+                    cc += f"**Downloaded By :** ꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂"
+                cc1 = f"**꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂**\n\n**{str(count).zfill(3)}.** {name1}\n\n**Batch Name :** {b_name}\n\n"
                 if message.from_user.username:
                     cc1 += f"**Downloaded By :** {message.from_user.first_name}\n`@{message.from_user.username}`"
                 else:
-                    cc1 += f"**Downloaded By :** Group Admin"
+                    cc1 += f"**Downloaded By :** ꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂"
                 
                 if "drive" in url:
                     try:
@@ -190,7 +190,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    prog = await m.reply_text(f"**Processing Next Output** \n**Downloading in Progress**")
+                    prog = await m.reply_text(f"**Processing Next Output** \n**Downloading in Progress** \n\n**{name}**")
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
                     await prog.delete(True)
@@ -198,7 +198,7 @@ async def account_login(bot: Client, m: Message):
                     count += 1
 
             except Exception as e:
-                await m.reply_text(f"#Failed {name} {url}")
+                await m.reply_text(f"#Failed \n {name}:{url}")
                 count += 1
                 continue
 
