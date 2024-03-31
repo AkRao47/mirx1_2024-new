@@ -117,6 +117,18 @@ async def account_login(bot: Client, m: Message):
     else:
         thumb == "no"
 
+    editable = await bot.send_message(m.chat.id, "Now send the **Link url**\nEg : ```https://telegra.ph/file/0633f8b6a6f110d34f044.com```\n\nor Send `no`")
+    inputlink = message = await bot.listen(editable.chat.id)
+    raw_textlink = inputlink.text
+
+    
+    if raw_textlink.startswith("http://") or raw_textlink.startswith("https://"):
+        urllink = raw_textlink
+    else:
+        urllink = "https://t.me/targetssc_2024"
+
+            
+
     if len(links) == 1:
         count = 1
     else:
@@ -155,12 +167,12 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
             try:  
-                cc = f"**꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂**\n\n**{str(count).zfill(3)}.** {name1}.mkv\n\n**Batch Name :** {b_name}\n\n"
+                cc = f"**꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂**\n\n**{str(count).zfill(3)}.** {name1}.mkv\n\n**Batch Name :**<a href='{urllink}'>{b_name}</a>"
                 if message.from_user.username:
                     cc += f"**Downloaded By :** {message.from_user.first_name}\n`@{message.from_user.username}`"
                 else:
                     cc += f"**Downloaded By :** ꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂"
-                cc1 = f"**꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂**\n\n**{str(count).zfill(3)}.** {name1}\n\n**Batch Name :** {b_name}\n\n"
+                cc1 = f"**꧁☆★ ℒℯℊℯ𝓃𝒹 𝒷ℴ𝓎 ★☆꧂**\n\n**{str(count).zfill(3)}.** {name1}\n\n**Batch Name :**<a href='{urllink}'>{b_name}</a>"
                 if message.from_user.username:
                     cc1 += f"**Downloaded By :** {message.from_user.first_name}\n`@{message.from_user.username}`"
                 else:
